@@ -1,18 +1,45 @@
-//
-//  FrameworkDetailView.swift
-//  SwiftUi-AppleFrameworks
-//
-//  Created by My Mac on 11.05.2024.
-//
-
 import SwiftUI
 
 struct FrameworkDetailView: View {
+    
+    var framework: Framework
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+            HStack{
+                
+                Spacer()
+                
+                Button{
+                    //
+                } label: {
+                    Image(systemName: "xmark")
+                        .foregroundStyle(Color(.label))
+                        .imageScale(.large)
+                        .frame(width: 44, height: 44)
+                }
+            }.padding()
+            
+            Spacer()
+            
+            FrameworkTitleView(framework: framework)
+            Text(framework.description)
+                .font(.body)
+                .padding()
+            
+            Spacer()
+            
+            Button{
+                //
+            } label:{
+                AFButton(title: "Learn More")
+                
+            }
+        }
     }
 }
 
 #Preview {
-    FrameworkDetailView()
+    FrameworkDetailView(framework: MockData.sampleFramework)
 }
