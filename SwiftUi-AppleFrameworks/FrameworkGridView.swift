@@ -1,5 +1,5 @@
 import SwiftUI
-
+//init
 struct FrameworkGridView: View {
     
     let columns: [GridItem] = [GridItem(.flexible()),
